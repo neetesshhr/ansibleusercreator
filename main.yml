@@ -1,0 +1,91 @@
+---
+
+- hosts: servers
+  remote_user: ubuntu
+  become: yes
+  vars_files:
+    - vars.yml
+  vars:
+    ansible_ssh_private_key_file: "{{ key }}"
+  tasks:
+    - name: Add user 'User1' with specific uid
+      ansible.builtin.user:
+        name: user1
+        comment: user1
+        uid: 1078
+        group: sudo
+        password: '$6$pj9Iw0ih1RNBeZ.P$6YV8XBjJLVLIEgpQFsIwE3yiBrPC7Vr2TLZq0ZF6Nqg02dtme6ZeYl15rwMR3Ot/s7UV65RthPx8/LxS7OeFB0'
+        createhome: yes
+        home: /home/user1
+
+    - name: Add user 'User2' with sp uid
+      ansible.builtin.user:
+        name: user2
+        comment: user2
+        uid: 1079
+        group: sudo
+        password: '$6$xN4KqgU./Ljh4vSA$hrNHiJmozQ6x0OtJdcVh5Q2hiZChSkJ0FLPIC0HDsBLqacASeVjsCKRKBdRMlJZTY.olMKLmMMA5PIA6UelWP/'
+        createhome: yes
+        home: /home/user2
+    
+    - name: Add user 'User3' with sp uid
+      ansible.builtin.user:
+        name: user3
+        comment: User3
+        uid: 1080
+        group: sudo
+        password: '$6$/sBt/AUZCTVGlzST$NKEqlmorK/mIomgC/N2ZZm2hRFq96x8bK4gkhCyDx8.G8jdtM9aQzIHUzfLHvG5PsCoTlDAwYuF..lvYYNPHB0'
+        createhome: yes
+        home: /home/user2
+
+    - name: Add user 'User4' with sp uid
+      ansible.builtin.user:
+        name: user4
+        comment: user4
+        uid: 1081
+        group: sudo
+        password: '$6$07HOjHXO/ZqnbQLA$GnvVMpkMgjhDxnGX3E9wnYd4cdRbUXSivJOkwZJH0UdFv43EHBSvz2AzDP2325T908rRJMhQEHJ6i5L45tIRW0'
+        createhome: yes
+        home: /home/user2
+
+    - name: Add user 'User5' with sp uid
+      ansible.builtin.user:
+        name: user5
+        comment: user5
+        uid: 1082
+        group: sudo
+        password: '$6$SjrHkm2Y63Yq9VvI$Q9gRK8UdQ7Zid256abMXMcLtxyhmvSdshVWwWYQTtrVA2ik0S/UcAddgoiba3wYJXZKcEdV6lQaPRkwmG/96J.'
+        createhome: yes
+        home: /home/user2
+
+    - name: Add user 'User6' with sp uid
+      ansible.builtin.user:
+        name: user6
+        comment: user6
+        uid: 1083
+        group: sudo
+        password: '$6$VlZl0/asz6tK1hbv$7apMkOdwuV2twkgMtFTzESQFCJEsUoZ4ToxjJoY4NsBlxT57NEJXhLFIArOF6op8SyVoMzRZ.aUUDUy1gigCB/'
+        createhome: yes
+        home: /home/user2
+
+    - name: Add user 'User7' with sp uid
+      ansible.builtin.user:
+        name: user7
+        comment: user7
+        uid: 1084
+        group: sudo
+        password: '$6$ewSFh5b7FlE3L8MG$pbKaSzEIPcYb5VQkqDoFlgG2WkLxEe6gakSx3I1MS0LhSnLRa47KqeXJEnk/i3YnRBvTGfWUUC3j4GobCiXmO/'
+        createhome: yes
+        home: /home/user2
+
+    - name: Add user 'User8' with sp uid
+      ansible.builtin.user:
+        name: user8
+        comment: user8
+        uid: 1085
+        group: sudo
+        password: '$6$OV9eo9rLaWvKEIJE$Qja7/z9MIo7Xh1Jzn7hZPq09HXdCtYW.ftLBDvmvjw3zjvOeSqTC31GP4i8ANVgloueRImVX1aISgnhk5LxKL1'
+        createhome: yes
+        home: /home/user2
+    
+
